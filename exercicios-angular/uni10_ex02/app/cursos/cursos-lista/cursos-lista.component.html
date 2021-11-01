@@ -1,0 +1,8 @@
+<div>
+  <h3>Próximos Cursos</h3>
+  <h4>Total likes: {{totalLikes}}</h4>
+  <app-cursos-item
+        *ngFor="let itemCurso of cursos"
+        [curso]="itemCurso" (favoritou)="itemFavoritado($event)">
+  </app-cursos-item>
+</div>
