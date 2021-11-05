@@ -1,0 +1,22 @@
+<article class="course presencial">
+  <div class="card">
+      <div class="card-block">
+        <h1>Nome do curso: {{nomeCurso}}</h1>
+        <p class="spots">Quantidade de vagas: {{vagas}}</p>
+        <p [ngSwitch]="vagas">
+          <span *ngSwitchCase="3" class="alert">Últimas vagas</span>
+          <span *ngSwitchCase="2" class="alert">Últimas vagas</span>
+          <span *ngSwitchCase="1" class="alert">Apenas uma vaga!</span>
+          <span *ngSwitchCase="0" class="alert">Vagas esgotadas</span>
+        </p>
+
+        <h3>Requisitos basicos</h3>
+        <ul class="requirements">
+          <li *ngFor="let requisito of requisitos">{{requisito}}</li>
+        </ul>
+        <label>Nome:</label>
+        <input type="text" (input)="lerNomeAluno($event)" name="nome"/>
+        <button class="btn" (click)="matricularAluno()">Matricular</button>
+      </div>
+  </div>
+</article>
